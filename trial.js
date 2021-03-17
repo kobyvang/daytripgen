@@ -1,77 +1,108 @@
-"use strict"
+"use strict";
 
 
-console.log("welcome to the day trip planner")
-console.log("random destination, resturant, transport, and entertainment")
-console.log("everything you need to generate your day trip!")
+
+
+console.log("welcome to the day trip planner");
+console.log("random destination, resturant, transport, and entertainment");
+console.log("everything you need to generate your day trip!");
+
+
+
 
 
 
 let destination = ["milwaukee", "madison", "dells", "devilslake"];
-
 function random(myArray){
-    return myArray[Math.floor(Math.random() * myArray.length)]
+    return myArray[Math.floor(Math.random() * myArray.length)];
     
 }
-console.log(random(destination));
+let destinationRandom = random(destination);
+console.log("destination " +destinationRandom);
+
+
+
 
 
 
 let resturant = ["mcdonalds","dennys","fineDining","flemmin"];
+let resturantRandom = random(resturant);
+console.log("resturant " + resturantRandom);
 
 
-console.log(random(resturant));
+
+
 
 
 let transportation = ["uber","taxi","rental","train","airplane"];
+let transportationRandom = random(transportation);
+console.log("transport " + transportationRandom);
 
 
-console.log(random(transportation));
+
 
 
 let entertainment = ["lasertag","movie","swimming","horseRiding","arcade"]
+let entertainmentRandom = random(entertainment);
+console.log("entertainment " + entertainmentRandom);
 
 
-console.log(random(entertainment));
 
 
 
-let userInput = prompt("would you like to change anything about your random trip?")
+let userInput = prompt("would you like to change anything about your random trip?");
 
 
 if (userInput == "yes"){
     while (userInput == "yes"){
-        console.log ("you have selected" + reChoose(userInput))
-        userInput = prompt ("would you like to change another catagory. yes or no.")
+        console.log ("you have changed to " + reChoose());
+        userInput = prompt ("would you like to change another catagory. yes or no.");
     }
 }
 else if (userInput == "no"){
     console.log("have a great time");
 }
 else{
-    userInput = prompt ("are you sure?")
+    userInput = prompt ("are you sure?");
 }
-console.log("enjoy your trip!")
+console.log("enjoy your trip!");
 
 
-function reChoose(input){
+
+
+
+function reChoose(){
     let user = prompt("what would you like to change?");
     if (user == "destination"){
-        let newDestination = random(destination)
-        return newDestination;
+         destinationRandom = random(destination);
+        return destinationRandom;
     }
     else if( user === "resturant"){
-        let newResturant = random(resturant);
-        return newResturant;
+        resturantRandom = random(resturant);
+        return resturantRandom;
     }
     else if (user === "transportation"){
-        let newTransportation = random(transportation);
-        return newTransportation
+         transportationRandom = random(transportation);
+        return transportationRandom;
     }
-    else (user === "entertainment");{
-        let newEntertainment = random(entertainment);
-        return newEntertainment
+    else if (user === "entertainment"){
+         entertainmentRandom = random(entertainment);
+        return entertainmentRandom;
     }
 }
 
 
+
+
+
+alert("you have choosen " + destinationRandom);
+alert("this will be the place to eat at " + resturantRandom);
+alert("the type of transport will be " + transportationRandom);
+alert("the type of enjoyment you wish for is " + entertainmentRandom);
+
+console.log ("you have choosen " + destinationRandom);
+console.log ("this will be the place to eat at " + resturantRandom);
+console.log ("the type of transport you will take is " + transportationRandom);
+console.log ( "the type of enjoyment you wish for is " + entertainmentRandom);
+
+console.log (" you have choosen to go to " + destinationRandom + " and eat at "+ resturantRandom + " with the transportation of " + transportationRandom + " to go enjoy doing "  + entertainmentRandom);
